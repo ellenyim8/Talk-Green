@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Reps </title> 
+    </head>
+    <body>
+        <center> 
+        <h1> CA Representatives </h1>
+        <p id="text"></p>
+
+        <script>
+            const text_el = document.getElementById('text')
+            const url = "https://www.googleapis.com/civicinfo/v2/representatives/"
+
+            fetch(url) 
+            .then((resp) => resp.json())
+            .then(function(data) {
+                text_el.innerHTML = data 
+            })
+
+        </script>
+
+        </center>
+    </body>
+</html>
