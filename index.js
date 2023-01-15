@@ -1,5 +1,7 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getDatabase, ref, child, get, set, onValue} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { getDatabase, ref, child, get, set, onValue} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"; 
+
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyABlfaefTsCRMoVBCd9sIUmS0Sedv6XPLk",
@@ -130,3 +132,4 @@ function render2(thisRepName) {
 }
 
 document.getElementById("button2").addEventListener("click", render2());
+
