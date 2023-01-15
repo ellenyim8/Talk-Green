@@ -1,7 +1,7 @@
 
 .page-bg {
-    /*background-image: url('./images/banners/home.gif');*/
-    background-image: url('./images/bgbg.jpg');
+    background-image: url('./images/banner-home.jpg');
+    /*background-image: url('./images/bgbg.jpg');*/
     background-position: center top;
     background-size: cover;
     z-index: -1;
@@ -84,6 +84,12 @@
 
 .index-description {
     font-size: 50px;
+    text-shadow: 2px 2px 2px #545759;
+    
+    letter-spacing: 0.25vw;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    color: rgb(201, 211, 203);
 }
 
 .index-container {
@@ -92,13 +98,13 @@
     justify-content: center;
 }
 
-.login-button {
+/*.login-button {
     height: 100px;
     width: 300px;
     margin-top: 200px;
     font-size: 30px;
     color: white;
-    /*background-color: rgb(233, 188, 183);*/
+    background-color: rgb(233, 188, 183);
     background-color: rgb(193, 130, 163);
     border-radius: 50px;
   
@@ -111,17 +117,62 @@
     margin-top: 55px;
     font-size: 30px;
     color: white;
-    /*background-color: rgb(233, 188, 183);*/
+    background-color: rgb(233, 188, 183);
     background-color: rgb(193, 130, 163);
     border-radius: 50px;
   
     transition: background-color, 0.5s;
-}
+}*/
+
+/* ---------index button------------*/
+
+  .index-button {
+                height: 150px;
+                width: 600px;
+                  display: inline-block;
+                  border-radius: 30px;
+                  background-color: #596d3d;
+                  border: none;
+                  color: #FFFFFF;
+                  text-align: center;
+                  font-size: 28px;
+                  padding: 20px;
+                  transition: all 0.5s;
+                  cursor: pointer;
+                  margin-left: 40px;
+                  margin-right: 40px;
+                }
+
+                .index-button span {
+                  cursor: pointer;
+                  display: inline-block;
+                  position: relative;
+                  transition: 0.5s;
+                }
+
+                .index-button span:after {
+                  content: '\00bb';
+                  position: absolute;
+                  opacity: 0;
+                  top: 0;
+                  right: -20px;
+                  transition: 0.5s;
+                }
+
+                .index-button:hover span {
+                  padding-right: 25px;
+                }
+
+                .index-button:hover span:after {
+                  opacity: 1;
+                  right: 0;
+                }
+
 
 /* ------- Login page ------------- */
 .box {
     padding: 25px;
-    background: chartreuse;
+    background: #3b4729;
 }
 
 Body {

@@ -46,7 +46,7 @@ body{
     text-transform: uppercase;
     outline: 0;
     border-radius: 10px;
-    background: #84f38b;
+    background: #7a9e45;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -55,7 +55,7 @@ body{
     cursor: pointer;
 }
 .form button:hover, .form button:active, .form button:focus{
-    background-color: #c7fbb0;
+    background-color: #9ebe6e;
     transition: all 1s ease 0s;
 }
 .form .message{

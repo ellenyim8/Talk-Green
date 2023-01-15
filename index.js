@@ -123,30 +123,7 @@ function render2(thisRepName) {
       location.href='repinfo.html';
       });
 
-      /*let responseRepliesDiv = document.createElement('div');
-      responseRepliesDiv.className = "response-replies-div";
-
-      let responseReplyButton = document.createElement('button');
-      responseReplyButton.addEventListener("click", function saveIt(){
-        saveReply(rep, childMessageID);
-      });
-      responseReplyButton.className = "response-reply-button";
-
-      let responseReplyButtonImg = document.createElement('img');
-      responseReplyButtonImg.src = "reply-icon.png"
-      responseReplyButtonImg.className = "response-reply-button-img";
-
-      let responseReplyInput = document.createElement('input');
-      responseReplyInput.id = childMessageID;
-      responseReplyInput.type = 'text';
-      responseReplyInput.placeholder = "Enter your response";
-      responseReplyInput.className = "response-reply-input";*/
-
-      repinfoDiv.appendChild(responseMsg);/*
-      responseReplyButton.appendChild(responseReplyButtonImg);
-      responseRepliesDiv.appendChild(responseReplyButton);
-      responseRepliesDiv.appendChild(responseReplyInput);
-      responseDiv.appendChild(responseRepliesDiv);*/
+      repinfoDiv.appendChild(responseMsg);
       repinfoDiv.appendChild(responseDiv);
     });
   });
