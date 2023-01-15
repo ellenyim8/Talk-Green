@@ -14,26 +14,22 @@
 
     <body>
 
-        <center> 
-
         <h1> Login </h1> 
 
-        <form> 
             <div class="container">
                 <label> Username: </label>
-                <input type="text" placeholder="Enter username: " name="username" required >
+                <input type="text" placeholder="Enter username: " name="username" required id="username-input">
                 <label> Password: </label>
-                <input type="password" placeholder="Enter password: " name="password" required > 
-                
-                <button type="submit">login</button>
+                <input type="password" placeholder="Enter password: " name="password" required id="password-input"> 
+                <div id="incorrect-login"></div>
+                <button id="login-button">login</button>
 
-                <button type="submit" class="cancelbtn"> Cancel</button>   
+                <button onclick="window.location.href='index.html'" type="submit" class="cancelbtn"> Cancel</button>   
 
             </div>
 
-        </form>
+        <script src="index.js" type="module"></script>
 
-        </center>
     </body>
 
 </html>
