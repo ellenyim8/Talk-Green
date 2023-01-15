@@ -1,3 +1,4 @@
+
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, child, get, set, onValue} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"; 
 
@@ -24,11 +25,12 @@ if(window.location.pathname.endsWith('login.html')){
 document.getElementById("login-button").addEventListener("click", login);
 }
 
+let storedUsername = null;
+
 function login(event) {
   let theUsername=document.getElementById("username-input").value;
   let thePassword=document.getElementById("password-input").value;
-  console.log(theUsername);
-  console.log(thePassword);
+
   let loginReference = ref(database, 'talkgreen/login/'+theUsername);
   console.log(loginReference);
   onValue(loginReference, (snapshot)=>{
@@ -40,14 +42,15 @@ function login(event) {
         password: thePassword
       });
       console.log("new user made");
-      location.href='get-start.html'
+      location.href='reps.html'
       console.log("redirected");
     }
     console.log('data', data);
     if(theUsername===data.username){
       console.log("usercorrect");
       if(thePassword===data.password){
-        location.href='get-start.html';
+        storedUsername = theUsername;
+        location.href='reps.html';
         console.log("correct");
       } else {
         alert("Wrong password! Please try again.");

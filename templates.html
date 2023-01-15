@@ -4,17 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-sheet.css">
     <script src="index.js" type="module"></script>
     <title>Templates</title>
 </head>
 <body>
-    <input class="template-input" placeholder="Enter your email template" type="text" id="template-enter">
+    <div id="template-div" class="header">
+      
+        <div class="enter-template-section">
+            <div>
+                <input class="template-input templateabc bill-input" placeholder="Bill name" type="text" id="bill-enter">
+              </div>
 
-    <button class="save-button"> Save
-    </button>
+          <div>
+            <input class="template-input templateabc template-input-specific" placeholder="Enter your email template" type="text" id="template-enter">
+          </div>
 
-    <div id="template-div">
+        </div>
 
-    </div>
+          <center>
+            <button class="save-button templateabc" id="save-button-id">Save</button>
+          </center>
+
+        <br>
+        <br>
+  
+        <!--<div class="refresh-section">
+            <button class="refresh-button" onclick="checkIfChanged('work'), render('work');">
+              <img class="menu-icon" src="refresh-icon.png">
+            </button>
+        </div>-->
+      </div>
+
 </body>
 </html>
