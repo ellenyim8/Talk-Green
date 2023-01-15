@@ -29,6 +29,9 @@ function login(event) {
   let theUsername=document.getElementById("username-input").value;
   let thePassword=document.getElementById("password-input").value;
 
+  console.log(document.getElementById("username-input").value);
+  console.log(document.getElementById("password-input").value);
+
   let loginReference = ref(database, 'talkgreen/login/'+theUsername);
   console.log(loginReference);
   onValue(loginReference, (snapshot)=>{
@@ -61,7 +64,8 @@ function login(event) {
   //location.href='get-start.html';
 }
 
-//let thisRepName = null;
+let thisRepName = null;
+console.log("rep name and " +thisRepName);
 
 function render() {
   document.getElementById("button").style.display = "none";
@@ -86,8 +90,14 @@ function render() {
       responseMsg.innerText = childRepName;
       responseMsg.className = "response-msg";
       responseMsg.id = childRepName;
+      console.log(responseMsg.id);
       responseMsg.addEventListener("click", function goToStuff(){
-      location.href='repinfo.html';
+      thisRepName=this.id;
+      console.log(thisRepName);
+      location.href=`repinfo.html?rep=${childRepName}`;
+      // let searchParames = new URLSearchParams();
+      // searchParames.set("rep", childRepName);
+      // location.search=searchParames;
       });
 
       repNames.appendChild(responseMsg);
@@ -100,20 +110,21 @@ if(window.location.pathname.endsWith('reps.html')){
   document.getElementById("button").addEventListener("click", render());
 }
 
-function render2(thisRepName) {
+function render2() {
+  console.log(new URLSearchParams(window.location.search).get("rep"));
+  console.log(thisRepName)
+  let theRepName = new URLSearchParams(window.location.search).get("rep");
   document.getElementById("button2").style.display = "none";
   const repinfoDiv = document.getElementById('repinfo-div');
   repinfoDiv.innerHTML = '';
-  console.log(thisRepName);
-  let repReference = ref(database, 'talkgreen/reps/' + thisRepName)
+  let repReference = ref(database, 'talkgreen/reps/' + theRepName)
   onValue(repReference, (snapshot)=>{
     snapshot.forEach(function(childSnapshot) {
       let childSnapVal = childSnapshot.val();
       let childRepBill = childSnapshot.key;
-      let childRepVote = childRepBill.value;
+      let childRepVote = childSnapshot.val();
 
       console.log(childSnapVal);
-      console.log(childRepName);
 
       // NOTE: the response section is created for each element here
       let responseDiv = document.createElement('div');
@@ -132,27 +143,66 @@ function render2(thisRepName) {
   });
 }
 
-if(window.location.pathname.endsWith('repsinfo.html')){
+if(window.location.pathname.endsWith('repinfo.html')){
+  console.log(new URLSearchParams(window.location.search));
   document.getElementById("button2").addEventListener("click", render2());
 }
 
 function saveTemplate(){
+  console.log("Saving Template FUnction")
+  let theBill=document.getElementById('bill-enter').value;
   let theMessage=document.getElementById('template-enter').value;
-  if(storedUsername===null){
-    alert("Please login before making a template!")
-  } else {
-    set(ref(database, 'talkgreen/templates/'+push()), {
-      username: storedUsername,
+  console.log(theBill);
+  console.log(document.getElementById('bill-enter'));
+  console.log(document.getElementById('bill-enter').value);
+  console.log(document.getElementById('template-enter'));
+  console.log(document.getElementById('template-enter').value);
+  console.log(theMessage);
+  let random = Math.floor(Math.random()*129837);
+    set(ref(database, 'talkgreen/templates/'+random), {
+      username: thisRepName,
+      bill: theBill,
       message: theMessage
     });
-  }
+    displayTemplates();
 }
 
 function displayTemplates() {
-  //alkjsdlkf
+  console.log("displaying all templates.")
+  const templateDiv = document.getElementById('template-div');
+  templateDiv.innerHTML='';
+  let templateReference=ref(database, 'talkgreen/templates');
+  console.log(templateReference);
+
+  onValue(templateReference, (snapshot)=>{
+    snapshot.forEach(function(childSnapshot){
+      let childSnapVal=childSnapshot.val();
+      console.log(childSnapVal);
+      let childTemplateUser=childSnapVal.username;
+      console.log(childTemplateUser);
+      let childTemplateBill=childSnapVal.bill;
+      console.log(childTemplateBill);
+      let childTemplateEmail=childSnapVal.message;
+      console.log(childTemplateEmail);
+
+      if(childTemplateUser===undefined){
+        childTemplateUser="Anonymous";
+      }
+
+      //added code
+      let templateDivv = document.createElement('div');
+      templateDivv.className = "template-container";
+
+      let eachTemplate=document.createElement('p');
+      eachTemplate.className="eachtemplate-class";
+      eachTemplate.innerText="\nUser: " + childTemplateUser + "\nBill: " + childTemplateBill + "\nTemplate: " + childTemplateEmail;
+      templateDiv.appendChild(templateDivv);
+      templateDiv.appendChild(eachTemplate);
+    })
+  })
 }
 
-/*
+
 if(window.location.pathname.endsWith('templates.html')){
-  document.getElementById("save-button-id").addEventListener("click", saveTemplate());
-}*/
+  document.getElementById("save-button-id").addEventListener("click", saveTemplate, displayTemplates);
+}

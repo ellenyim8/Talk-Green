@@ -9,7 +9,6 @@
     <title>Templates</title>
 </head>
 <body>
-    <div id="template-div" class="header">
       
         <div class="enter-template-section">
             <div>
@@ -17,10 +16,9 @@
               </div>
 
           <div>
-            <input class="template-input templateabc template-input-specific" placeholder="Enter your email template" type="text" id="template-enter">
+            <!--<input class="template-input templateabc template-input-specific" placeholder="Enter your email template" type="text" id="template-enter">-->
+            <textarea placeholder="Enter your email template" class="template-input templateabc template-input-specific" name="templateaaa" id="template-enter" cols="40" rows="5"></textarea>
           </div>
-
-        </div>
 
           <center>
             <button class="save-button templateabc" id="save-button-id">Save</button>
@@ -28,13 +26,15 @@
 
         <br>
         <br>
+        </div>
   
         <!--<div class="refresh-section">
             <button class="refresh-button" onclick="checkIfChanged('work'), render('work');">
               <img class="menu-icon" src="refresh-icon.png">
             </button>
         </div>-->
-      </div>
+        <div id="template-div" class="header">
+        </div>
 
 </body>
 </html>

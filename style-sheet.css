@@ -90,6 +90,9 @@
     font-family: Arial, sans-serif;
     font-style: italic;
     color: rgb(201, 211, 203);
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-bottom: 60px;
 }
 
 .index-container {
@@ -233,8 +236,11 @@ button:hover {
 }
 
 .template-input-specific {
-    height: 180px;
+    padding-top: 70px;
+    height: 110px;
     width: 600px;
+    overflow-wrap: normal;
+    word-break: break-all;
 }
 
 .template-input::placeholder {
@@ -285,3 +291,32 @@ button:hover {
       right: 0;
     }
 
+/*REPINFO*/
+
+.template-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.eachtemplate-class{
+    border: none;
+    margin-top: 10px;
+    padding-left: 30px;
+    font-size: 30px;
+    color: rgb(138, 132, 133);
+    border-radius: 30px;
+    margin-left: 70px;
+}
+
+/*---------------------------repinfo*/
+
+.repinfo-msg{
+    border: none;
+    margin-top: 10px;
+    padding-left: 30px;
+    font-size: 30px;
+    color: rgb(138, 132, 133);
+    border-radius: 30px;
+    margin-left: 70px;
+}
