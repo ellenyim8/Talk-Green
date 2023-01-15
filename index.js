@@ -137,7 +137,7 @@ if(window.location.pathname.endsWith('repsinfo.html')){
 }
 
 function saveTemplate(){
-  let theMessage=document.getElementById("template-input").value;
+  let theMessage=document.getElementById('template-enter').value;
   if(storedUsername===null){
     alert("Please login before making a template!")
   } else {
@@ -148,6 +148,11 @@ function saveTemplate(){
   }
 }
 
+function displayTemplates() {
+  //alkjsdlkf
+}
+
+/*
 if(window.location.pathname.endsWith('templates.html')){
   document.getElementById("save-button-id").addEventListener("click", saveTemplate());
-}
+}*/

@@ -217,15 +217,24 @@ button:hover {
     box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
 }
 
+.bill-input{
+    height: 180px;
+    width: 250px;
+    margin-right: 50px;
+}
+
 .template-input {
     border: none;
     margin-top: 10px;
     padding-left: 30px;
-    height: 180px;
-    width: 600px;
     font-size: 30px;
     color: rgb(138, 132, 133);
     border-radius: 30px;
+}
+
+.template-input-specific {
+    height: 180px;
+    width: 600px;
 }
 
 .template-input::placeholder {
