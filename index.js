@@ -1,3 +1,4 @@
+
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getDatabase, ref, child, get, set, onValue} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 // Your web app's Firebase configuration
@@ -22,11 +23,12 @@ if(window.location.pathname.endsWith('login.html')){
 document.getElementById("login-button").addEventListener("click", login);
 }
 
+let storedUsername = null;
+
 function login(event) {
   let theUsername=document.getElementById("username-input").value;
   let thePassword=document.getElementById("password-input").value;
-  console.log(theUsername);
-  console.log(thePassword);
+
   let loginReference = ref(database, 'talkgreen/login/'+theUsername);
   console.log(loginReference);
   onValue(loginReference, (snapshot)=>{
@@ -38,14 +40,15 @@ function login(event) {
         password: thePassword
       });
       console.log("new user made");
-      location.href='get-start.html'
+      location.href='reps.html'
       console.log("redirected");
     }
     console.log('data', data);
     if(theUsername===data.username){
       console.log("usercorrect");
       if(thePassword===data.password){
-        location.href='get-start.html';
+        storedUsername = theUsername;
+        location.href='reps.html';
         console.log("correct");
       } else {
         alert("Wrong password! Please try again.");
@@ -129,4 +132,22 @@ function render2(thisRepName) {
   });
 }
 
-document.getElementById("button2").addEventListener("click", render2());
+if(window.location.pathname.endsWith('repsinfo.html')){
+  document.getElementById("button2").addEventListener("click", render2());
+}
+
+function saveTemplate(){
+  let theMessage=document.getElementById("template-input").value;
+  if(storedUsername===null){
+    alert("Please login before making a template!")
+  } else {
+    set(ref(database, 'talkgreen/templates/'+push()), {
+      username: storedUsername,
+      message: theMessage
+    });
+  }
+}
+
+if(window.location.pathname.endsWith('templates.html')){
+  document.getElementById("save-button-id").addEventListener("click", saveTemplate());
+}

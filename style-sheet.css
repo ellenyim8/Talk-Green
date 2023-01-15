@@ -205,3 +205,74 @@ button:hover {
     padding: 10px 20px; 
     margin: 10px 5px; 
 }
+
+/* --------templates--------*/
+.enter-template-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.templateabc {
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+}
+
+.template-input {
+    border: none;
+    margin-top: 10px;
+    padding-left: 30px;
+    height: 180px;
+    width: 600px;
+    font-size: 30px;
+    color: rgb(138, 132, 133);
+    border-radius: 30px;
+}
+
+.template-input::placeholder {
+    height: 100px;
+    font-size: 30px;
+    color: rgb(138, 132, 133);
+  }
+
+.save-button {
+    height: 70px;
+    width: 200px;
+      display: inline-block;
+      border-radius: 30px;
+      background-color: #596d3d;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    .save-button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .save-button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .save-button:hover span {
+      padding-right: 25px;
+    }
+
+    .save-button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+
