@@ -1,0 +1,40 @@
+body {
+    background-image: url('./images/ca-img.png');
+    background: image -2px;
+    background-position: center top;
+    background-size: cover;
+    background-blend-mode:hard-light;
+    z-index: -1;
+    top: 0;
+    position: center;
+    width: 50vh;
+    height: 25vh;
+    
+    color: black;
+    font-family: Calibri, Helvetica, sans-serif;
+    margin: 100px auto 150px; 
+    padding: 10px 45px 30px 45px;
+    text-align: center;
+    font-size:large;
+    font-style: oblique;
+    
+    font-weight: bolder;
+
+    flex: 20px; 
+    
+}
+
+div {
+}
+
+#reps-name-div {
+    display: grid;
+    grid: repeat(2, 60px) / auto-flow 80px;
+}
+
+#reps-name-div > div {
+    background-color: darkgreen;
+    width: 50px; 
+    height: 50px; 
+}
+
