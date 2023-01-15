@@ -46,6 +46,7 @@ function login(event) {
         location.href='get-start.html';
         console.log("correct");
       } else {
+        alert("Wrong password! Please try again.");
         console.log("wrong pass");
       }
     }

@@ -1,7 +1,7 @@
 
 .page-bg {
     /*background-image: url('./images/banners/home.gif');*/
-    background-image: url('./images/banner-home.jpg');
+    background-image: url('./images/bgbg.jpg');
     background-position: center top;
     background-size: cover;
     z-index: -1;
@@ -73,13 +73,49 @@
     color: green;
 }
 
-.container {
+/*.container {
     width: 100px;
     height: 100px;
     text-align: right; 
     block-size: 50px 25px;
     color: black;
     
+}*/
+
+.index-description {
+    font-size: 50px;
+}
+
+.index-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.login-button {
+    height: 100px;
+    width: 300px;
+    margin-top: 200px;
+    font-size: 30px;
+    color: white;
+    /*background-color: rgb(233, 188, 183);*/
+    background-color: rgb(193, 130, 163);
+    border-radius: 50px;
+  
+    transition: background-color, 0.5s;
+}
+
+.get-started-button {
+    height: 100px;
+    width: 300px;
+    margin-top: 55px;
+    font-size: 30px;
+    color: white;
+    /*background-color: rgb(233, 188, 183);*/
+    background-color: rgb(193, 130, 163);
+    border-radius: 50px;
+  
+    transition: background-color, 0.5s;
 }
 
 /* ------- Login page ------------- */
@@ -113,9 +149,8 @@ button:hover {
     opacity: 0.5;
 }
 
-cancel_button {
+.cancel_button {
     width: auto; 
     padding: 10px 20px; 
     margin: 10px 5px; 
 }
-
